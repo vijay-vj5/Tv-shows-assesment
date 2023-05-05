@@ -10,33 +10,33 @@ function Screen1() {
   useEffect(() => {
     fetch('https://api.tvmaze.com/search/shows?q=all')
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(data => setData(data)); ā
   }, []);
 
   return (
     <div>
-       <h1 className='text-center'>Show List</h1>
-       <CardGroup className="d-flex gap-5">
-       {data.map(item => (
+      <h1 className='text-center'>Show List</h1>
+      <CardGroup className="d-flex gap-5">
+        {data.map(item => (
           <list key={item.show.id}>
             <Card style={{ width: '18rem' }}>
-       <Card.Img variant="top" src={item.show.image?.medium} alt={item.show.name}  />
-       <Card.Body>
-         <Card.Title>{item.show.name}</Card.Title>
-         
-         <Link to={`/summary/${item.show.id}`}>summary</Link>
-      
-       </Card.Body>
-     </Card> 
-           
+              <Card.Img variant="top" src={item.show.image?.medium} alt={item.show.name} />
+              <Card.Body>
+                <Card.Title>{item.show.name}</Card.Title>
 
-            
+                <Link to={`/summary/${item.show.id}`}>summary</Link>
+
+              </Card.Body>
+            </Card>
+
+
+
           </list>
         ))}
-     
+
       </CardGroup>
     </div>
-    
+
   );
 }
 

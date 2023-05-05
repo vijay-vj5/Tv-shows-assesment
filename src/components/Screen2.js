@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
- import Card from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card';
 
 function Screen2() {
   const { id } = useParams();
@@ -15,22 +15,22 @@ function Screen2() {
 
   return (
     <div>
-       <Card className="text-center">
-       <Card.Header>Summary</Card.Header>
+      <Card className="text-center">
+        <Card.Header>Summary</Card.Header>
         <Card.Body>
-         <Card.Text>
-         {summary}
-         </Card.Text>
-         <Link to ='/BookingForm'>
-         <Button variant="primary">book a ticket</Button>
-         </Link>
-        
-         </Card.Body>
-        
-        </Card>
-    
+          <Card.Text>
+            {summary}
+          </Card.Text>
+          <Link to='/BookingForm'>
+            <Button variant="primary">book a ticket</Button>
+          </Link>
+
+        </Card.Body>
+
+      </Card>
+
     </div>
-    
+
   );
 }
 
