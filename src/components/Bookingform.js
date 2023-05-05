@@ -10,7 +10,7 @@ function BookingForm() {
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
+  const [moviename, setMoviename] = useState('');
   const [language, setLanguage] = useState('');
   const [tickets, setTickets] = useState('');
   const [day, setDay] = useState('');
@@ -23,16 +23,9 @@ function BookingForm() {
     console.log('First Name:', fname);
     console.log('Email:', email);
     console.log('Phone:', phone);
-    setFname('');
-    setEmail('');
-    setLname('');
-    setPhone('');
-    setAddress('');
-    setLanguage('');
-    setTickets('');
-    setDay('');
-
-    const formData = { fname, lname, email, phone, address, language, tickets, day };
+    event.target.reset();
+    
+    const formData = { fname, lname, email, phone, moviename, language, tickets, day };
 
     const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
 
@@ -40,6 +33,7 @@ function BookingForm() {
 
     // save updated bookings to local storage
     localStorage.setItem('bookings', JSON.stringify(existingBookings));
+    
   };
 
   return (
@@ -68,9 +62,9 @@ function BookingForm() {
           </Form.Group>
         </Row>
 
-        <Form.Group className="mb-3" controlId="address" onChange={event => setAddress(event.target.value)}>
-          <Form.Label>Address</Form.Label>
-          <Form.Control placeholder="1234 Main St" />
+        <Form.Group className="mb-3" controlId="moviename" onChange={event => setMoviename(event.target.value)}>
+          <Form.Label>Movie Name</Form.Label>
+          <Form.Control placeholder="moviename" />
         </Form.Group>
 
         <Row className="mb-3">

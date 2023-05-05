@@ -10,7 +10,7 @@ function Screen1() {
   useEffect(() => {
     fetch('https://api.tvmaze.com/search/shows?q=all')
       .then(response => response.json())
-      .then(data => setData(data)); ā
+      .then(data => setData(data));
   }, []);
 
   return (
